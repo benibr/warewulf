@@ -1,8 +1,10 @@
 -include Defaults.mk
 
 # Linux distro (try and set to /etc/os-release ID)
+ifneq ($(OS),)
 OS_REL := $(shell sed -n "s/^ID\s*=\s*['"\""]\(.*\)['"\""]/\1/p" /etc/os-release)
 OS ?= $(OS_REL)
+endif
 
 ARCH_REL := $(shell uname -p)
 ARCH ?= $(ARCH_REL)
