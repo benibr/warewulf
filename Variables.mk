@@ -1,7 +1,7 @@
 -include Defaults.mk
 
 # Linux distro (try and set to /etc/os-release ID)
-ifneq ($(OS),)
+ifeq ($(OS),)
 OS_REL := $(shell sed -n "s/^ID\s*=\s*['"\""]\(.*\)['"\""]/\1/p" /etc/os-release)
 OS ?= $(OS_REL)
 endif
