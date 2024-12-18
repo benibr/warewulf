@@ -12,6 +12,7 @@ import (
 	"strings"
 	"syscall"
 	"text/template"
+	"math/rand"
 
 	"github.com/Masterminds/sprig/v3"
 
@@ -372,6 +373,7 @@ func RenderTemplateFile(fileName string, data TemplateStruct) (
 		"IncludeFrom":  templateContainerFileInclude,
 		"IncludeBlock": templateFileBlock,
 		"basename":     path.Base,
+		"rand":         rand.Int,
 		"inc":          func(i int) int { return i + 1 },
 		"dec":          func(i int) int { return i - 1 },
 		"file":         func(str string) string { return fmt.Sprintf("{{ /* file \"%s\" */ }}", str) },
