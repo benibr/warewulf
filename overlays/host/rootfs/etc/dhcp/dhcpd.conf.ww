@@ -49,8 +49,8 @@ if exists user-class and option user-class = "iPXE" {
 subnet {{$.Network}} netmask {{$.Netmask}} {
     max-lease-time 120;
     range {{$.Dhcp.RangeStart}} {{$.Dhcp.RangeEnd}};
-{{$r := rand.Intn(len(Rripaddr))}}
-    next-server {{(index .Rripaddr r)}};
+    {{$r := random .Rripaddr}}
+    next-server {{(index .Rripaddr $r)}};
 
 }
 

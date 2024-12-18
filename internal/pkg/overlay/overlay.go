@@ -373,7 +373,7 @@ func RenderTemplateFile(fileName string, data TemplateStruct) (
 		"IncludeFrom":  templateContainerFileInclude,
 		"IncludeBlock": templateFileBlock,
 		"basename":     path.Base,
-		"rand":         rand.Int,
+		"random":        func(a []string) int { return rand.Intn(len(a))},
 		"inc":          func(i int) int { return i + 1 },
 		"dec":          func(i int) int { return i - 1 },
 		"file":         func(str string) string { return fmt.Sprintf("{{ /* file \"%s\" */ }}", str) },
