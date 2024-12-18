@@ -103,6 +103,8 @@ func (conf *WarewulfYaml) Parse(data []byte) error {
 		conf.TFTP.IpxeBinaries = defIpxe
 	}
 
+    // FIXME: here we could detect multiple IPs
+
 	// check whether ip addr is CIDR type and configure related fields as required
 	if ip, network, err := net.ParseCIDR(conf.Ipaddr); err == nil {
 		conf.Ipaddr = ip.String()
