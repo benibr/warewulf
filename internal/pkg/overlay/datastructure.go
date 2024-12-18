@@ -24,7 +24,7 @@ type TemplateStruct struct {
 	BuildTimeUnix string
 	BuildSource   string
 	Ipaddr        string
-	Rripaddr      []string
+	Rrbootaddrs   []string
 	Ipaddr6       string
 	Netmask       string
 	Network       string
@@ -72,7 +72,7 @@ func InitStruct(nodeData node.Node) (TemplateStruct, error) {
 	tstruct.Paths = *controller.Paths
 	tstruct.Warewulf = *controller.Warewulf
 	tstruct.Ipaddr = controller.Ipaddr
-	tstruct.Rripaddr = controller.Rripaddr
+	tstruct.Rrbootaddrs = controller.Rrbootaddrs
 	tstruct.Ipaddr6 = controller.Ipaddr6
 	tstruct.Netmask = controller.Netmask
 	tstruct.Network = controller.Network

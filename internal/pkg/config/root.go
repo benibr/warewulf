@@ -29,7 +29,7 @@ var cachedConf WarewulfYaml
 type WarewulfYaml struct {
 	Comment         string        `yaml:"comment,omitempty"`
 	Ipaddr          string        `yaml:"ipaddr,omitempty"`
-	Rripaddr        []string      `yaml:"rripaddr,omitempty"`
+	Rrbootaddrs     []string      `yaml:"rrbootaddrs,omitempty"`
 	Ipaddr6         string        `yaml:"ipaddr6,omitempty"`
 	Netmask         string        `yaml:"netmask,omitempty"`
 	Network         string        `yaml:"network,omitempty"`
